@@ -8,16 +8,62 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #83DCD4;
+            background: linear-gradient(to right, #888888, #83DCD4, #888888);
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: repeating-radial-gradient(circle, transparent, transparent 10px, white 10px, white 20px);
+            z-index: -1;
+            animation: rotateCounterClockwise 30s linear infinite;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: repeating-radial-gradient(circle, transparent, transparent 10px, white 10px, white 20px);
+            z-index: -1;
+            animation: rotateClockwise 30s linear infinite;
+        }
+
+        @keyframes rotateClockwise {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateCounterClockwise {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-360deg);
+            }
         }
 
         .header {
             text-align: center;
             margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.5); /* Fondo blanco traslúcido para el título */
+            padding: 5px; /* Borde más delgado */
+            border-radius: 5px;
         }
 
         .container {
@@ -26,6 +72,8 @@
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             grid-gap: 20px;
             padding: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
         }
 
         .image-container {
@@ -33,9 +81,9 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            border: 2px solid #333; /* Agregar un borde gris oscuro */
-            border-radius: 5px; /* Para bordes redondeados */
-            padding: 10px; /* Espacio interno */
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+            padding: 10px;
         }
 
         .image-container img {
@@ -47,7 +95,7 @@
 <body>
     <div class="header">
         <h1>Mis proyectos y experimentación digital</h1>
-        <h2></h2>
+        <h2>Damian Maturana Contreras</h2>
     </div>
 
     <div class="container">
@@ -55,16 +103,16 @@
             <a href="https://damianmatu.github.io/damipruebadepag/" target="_blank">
                 <div class="image-container">
                     <img src="imagenes/1.png" alt="Descripción de la imagen 1">
-                    <div class="hover-text">Texto para la imagen 1</div>
+                    <div class="hover-text">Probemos con patrones y movimientos en un canvas, ¿Que se podría hacer?</div>
                 </div>
             </a>
         </div>
 
-        <div class="tarea2">
+         <div class="tarea2">
             <a href="https://damianmatu.github.io/Damirepos2/" target="_blank">
                 <div class="image-container">
                     <img src="imagenes/2.png" alt="Descripción de la imagen 2">
-                    <div class="hover-text">Texto para la imagen 2</div>
+                    <div class="hover-text">¿Se podría interactuar en algún patrón o movimiento constante y cambiar alguna propiedad? hagamos un clic entonces </div>
                 </div>
             </a>
         </div>
@@ -73,7 +121,7 @@
             <a href="https://damianmatu.github.io/Damirepos3/" target="_blank">
                 <div class="image-container">
                     <img src="imagenes/3.png" alt="Descripción de la imagen 3">
-                    <div class="hover-text">Texto para la imagen 3</div>
+                    <div class="hover-text">Probemos con hacer aparecer algo, ¿se mantiene, desaparece, como es? </div>
                 </div>
             </a>
         </div>
@@ -82,7 +130,7 @@
             <a href="https://damianmatu.github.io/Damirepos4/" target="_blank">
                 <div class="image-container">
                     <img src="imagenes/4.png" alt="Descripción de la imagen 4">
-                    <div class="hover-text">Texto para la imagen 4</div>
+                    <div class="hover-text">Cambiar propiedades, cambia resultados, probemos con algún sistema de experimentación, quizá podría aparecer algo totalmente deforme e interesante </div>
                 </div>
             </a>
         </div>
@@ -91,7 +139,7 @@
             <a href="https://damianmatu.github.io/Damirepos5/" target="_blank">
                 <div class="image-container">
                     <img src="imagenes/5.png" alt="Descripción de la imagen 5">
-                    <div class="hover-text">Texto para la imagen 5</div>
+                    <div class="hover-text">Estoy aburrido, quiero ver algo caotico e impredesible… algo que parezca vivo y se mueva por voluntad propia </div>
                 </div>
             </a>
         </div>
@@ -100,10 +148,5 @@
             <a href="https://damianmatu.github.io/Damirepos6/" target="_blank">
                 <div class="image-container">
                     <img src="imagenes/6.png" alt="Descripción de la imagen 6">
-                    <div class="hover-text">Texto para la imagen 6</div>
+                    <div class="hover-text">Espero no haber consumido mucha de tu memoria RAM con lo anterior jaja, probemos algo de libertad creativa, un canvas… un lienzo, ¡¡hagámoslo literal! ¡¡Dibuja!!</div>
                 </div>
-            </a>
-        </div>
-    </div>
-</body>
-</html>
